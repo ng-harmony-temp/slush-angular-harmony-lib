@@ -1,6 +1,6 @@
 {
     "name": "slush-angular-harmony-lib",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "description": "A slush generator for Ng-Harmony Libs",
     "homepage": "https://github.com/ng-harmony/slush-angular-harmony-lib",
     "bugs": "https://github.com/ng-harmony/slush-angular-harmony-lib/issues",
