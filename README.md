@@ -1,16 +1,15 @@
-# Slush Node [![Build Status](https://secure.travis-ci.org/chrisenytc/slush-node.png?branch=master)](https://travis-ci.org/chrisenytc/slush-node) [![NPM version](https://badge-me.herokuapp.com/api/npm/slush-node.png)](http://badges.enytc.com/for/npm/slush-node)
-
-> A [slush](http://slushjs.github.io) generator for Node.js.
+# Slush Angular Harmony Lib
+> A [slush](http://slushjs.github.io) generator for ng-harmony-libs.
 
 
 ## Getting Started
 
 ### Installation
 
-Install `slush-node` globally:
+Install `slush-angluar-harmony-lib` globally:
 
 ```bash
-npm install -g slush-node
+npm install -g slush-angular-harmony-lib
 ```
 
 Remember to install `slush` globally as well, if you haven't already:
@@ -30,7 +29,7 @@ mkdir my-node-module
 Run the generator from within the new folder:
 
 ```bash
-cd my-node-module && slush node
+cd my-node-module && slush angular-harmony-lib
 ```
 
 ## Getting To Know Slush
@@ -41,12 +40,8 @@ Slush does not contain anything "out of the box", except the ability to locate i
 
 To be able to provide functionality like Yeoman, see: [Yeoman like behavior below.](https://github.com/slushjs/slush#yeoman-like-behavior)
 
-## Contributing
-
-See the [CONTRIBUTING Guidelines](https://github.com/chrisenytc/slush-node/blob/master/CONTRIBUTING.md)
-
 ## Support
-If you have any problem or suggestion please open an issue [here](https://github.com/chrisenytc/slush-node/issues).
+If you have any problem or suggestion please open an issue [here](https://github.com/ng-harmony/slush-angular-harmony-lib/issues).
 
 ## License
 
@@ -74,4 +69,3 @@ HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
 WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
 FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
 OTHER DEALINGS IN THE SOFTWARE.
-

@@ -25,14 +25,12 @@ function format(string) {
 
 var defaults = (function() {
     var workingDirName = path.basename(process.cwd()),
-        homeDir, osUserName, configFile, user;
+        homeDir, includeSed, configFile, user;
 
     if (process.platform === 'win32') {
         homeDir = process.env.USERPROFILE;
-        osUserName = process.env.USERNAME || path.basename(homeDir).toLowerCase();
     } else {
         homeDir = process.env.HOME || process.env.HOMEPATH;
-        osUserName = homeDir && homeDir.split('/').pop() || 'root';
     }
 
     configFile = path.join(homeDir, '.gitconfig');
@@ -44,7 +42,7 @@ var defaults = (function() {
 
     return {
         appName: workingDirName,
-        userName: osUserName || format(user.name || ''),
+        userName: 'ng-harmony',
         authorName: user.name || '',
         authorEmail: user.email || ''
     };
@@ -53,38 +51,27 @@ var defaults = (function() {
 gulp.task('default', function(done) {
     var prompts = [{
         name: 'appName',
-        message: 'What the module name?',
+        message: 'What\'s the module name?',
         default: defaults.appName
     }, {
         name: 'appDescription',
-        message: 'What the description?'
+        message: 'Please enter a short description?'
     }, {
         name: 'appVersion',
-        message: 'What the module version?',
+        message: 'What\'s the module version?',
         default: '0.1.0'
     }, {
         name: 'authorName',
-        message: 'What the author name?',
+        message: 'What\'s the author name?',
         default: defaults.authorName
     }, {
         name: 'authorEmail',
-        message: 'What the author email?',
+        message: 'And the author\'s email?',
         default: defaults.authorEmail
     }, {
         name: 'userName',
-        message: 'What the github username?',
+        message: 'What\'s the github username?',
         default: defaults.userName
-    }, {
-        type: 'list',
-        name: 'license',
-        message: 'Choose your license type',
-        choices: ['MIT', 'BSD'],
-        default: 'MIT'
-    }, {
-        type: 'confirm',
-        name: 'enableBin',
-        message: 'Would you like to enable bin option?',
-        default: false
     }];
     //Ask
     inquirer.prompt(prompts,
@@ -98,27 +85,14 @@ gulp.task('default', function(done) {
             answers.year = d.getFullYear();
             answers.date = d.getFullYear() + '-' + (d.getMonth() + 1) + '-' + d.getDate();
             var files = [__dirname + '/templates/**'];
-            if (answers.license === 'MIT') {
-                files.push('!' + __dirname + '/templates/LICENSE_BSD');
-            } else {
-                files.push('!' + __dirname + '/templates/LICENSE_MIT');
-            }
-            if (!answers.enableBin) {
-                files.push('!' + __dirname + '/templates/bin/**/**');
-                files.push('!' + __dirname + '/templates/bin');
-            }
+            files.push('!' + __dirname + '/templates/LICENSE');
+            files.push('!' + __dirname + '/templates/dist/**');
+            files.push('!' + __dirname + '/templates/dist');
             gulp.src(files)
                 .pipe(template(answers))
                 .pipe(rename(function(file) {
                     var appReplace = file.basename.replace(new RegExp('appName', 'g'), answers.appNameSlug);
                     file.basename = appReplace;
-                    if (answers.license === 'MIT') {
-                        var mit = file.basename.replace('LICENSE_MIT', 'LICENSE');
-                        file.basename = mit;
-                    } else {
-                        var bsd = file.basename.replace('LICENSE_BSD', 'LICENSE');
-                        file.basename = bsd;
-                    }
                     if (file.basename[0] === '_') {
                         file.basename = '.' + file.basename.slice(1);
                     }

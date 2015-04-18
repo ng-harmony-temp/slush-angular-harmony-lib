@@ -2,3 +2,7 @@ node_modules/
 temp
 *.log
 .idea
+jspm_packages/
+bower_components/
+.tmp/
+npm-debug.log

@@ -1,29 +1,26 @@
 {
-    "name": "slush-node",
-    "version": "0.2.1",
-    "description": "A slush generator for Node.js",
-    "homepage": "https://github.com/chrisenytc/slush-node",
-    "bugs": "https://github.com/chrisenytc/slush-node/issues",
+    "name": "slush-angular-harmony-lib",
+    "version": "0.1.0",
+    "description": "A slush generator for Ng-Harmony Libs",
+    "homepage": "https://github.com/ng-harmony/slush-angular-harmony-lib",
+    "bugs": "https://github.com/ng-harmony/slush-angular-harmony-lib/issues",
     "author": {
-        "name": "Christopher EnyTC",
-        "email": "chrisenytc@gmail.com",
-        "url": "https://github.com/chrisenytc"
+        "name": "joehannes",
+        "email": "johannes.neugschwentner@gmail.com",
+        "url": "https://github.com/joehannes"
     },
     "licenses": [{
         "type": "MIT",
-        "url": "https://github.com/chrisenytc/slush-node/blob/master/LICENSE"
+        "url": "https://github.com/ng-harmony/slush-angular-harmony-lib/blob/master/LICENSE"
     }],
     "repository": {
         "type": "git",
-        "url": "git://github.com/chrisenytc/slush-node.git"
+        "url": "git://github.com/ng-harmony/slush-angular-harmony-lib.git"
     },
     "main": "slushfile.js",
     "engines": {
         "node": ">=0.10.26",
         "npm": ">=1.4.3"
-    },
-    "scripts": {
-        "test": "make test"
     },
     "dependencies": {
         "gulp": "~3.5.6",
@@ -36,13 +33,18 @@
         "iniparser": "~1.0.5"
     },
     "devDependencies": {
-        "mocha": "~1.14.0",
-        "chai": "~1.8.0"
     },
     "keywords": [
         "slushgenerator",
         "node",
         "npm",
-        "module"
+        "module",
+        "angular",
+        "es6",
+        "harmony",
+        "angular 2.0",
+        "es-next",
+        "esnext",
+        "class"
     ]
 }
