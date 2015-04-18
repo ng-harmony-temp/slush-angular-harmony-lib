@@ -15,7 +15,8 @@ var gulp = require('gulp'),
     rename = require('gulp-rename'),
     _ = require('underscore.string'),
     inquirer = require('inquirer'),
-    path = require('path');
+    path = require('path'),
+    fs = require('fs');
 
 function format(string) {
     var username = string.toLowerCase();
@@ -86,8 +87,11 @@ gulp.task('default', function(done) {
             answers.date = d.getFullYear() + '-' + (d.getMonth() + 1) + '-' + d.getDate();
             var files = [__dirname + '/templates/**'];
             files.push('!' + __dirname + '/templates/LICENSE');
-            files.push('!' + __dirname + '/templates/dist/**');
-            files.push('!' + __dirname + '/templates/dist');
+            fs.mkdir('./src');
+            fs.mkdirSync('./dist');
+            fs.mkdir('./dist/es5');
+            fs.mkdir('./dist/esnext');
+            fs.mkdir('./dist/raw');
             gulp.src(files)
                 .pipe(template(answers))
                 .pipe(rename(function(file) {
