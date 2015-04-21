@@ -1,7 +1,7 @@
 # <%= appNameOnly %>
 =========================
 
-[![Join the chat at https://gitter.im/joehannes/ng_harmony](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/joehannes/ng_harmony?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![Join the chat at https://gitter.im/ng-harmony/ng-harmony](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/ng-harmony/ng_harmony?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 ## Concept
 
