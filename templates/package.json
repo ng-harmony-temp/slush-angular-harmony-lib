@@ -18,7 +18,7 @@
         "type": "MIT",
         "url": "https://github.com/<%= userName %>/<%= appNameSlug %>/blob/master/LICENSE"
     }],
-    "main": "dist/es5/system_module.js",
+    "main": "build/index.js",
     "engines": {
         "node": ">= 0.10.36",
         "npm": ">=1.4.28"
